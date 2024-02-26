@@ -15,7 +15,10 @@ class Item(BaseModel):
     tax:Union[float,None]=None
     tags:List[str]=set()
 
-@app.post('/items/',response_model=Item,status_code=status.HTTP_201_CREATED)
+@app.post('/items/',response_model=Item,status_code=status.HTTP_201_CREATED,deprecated=True)
 async def create_item(item:Item):
-    return item
+    return {'item_name':item.item_name}
+
+#path configuration may help provide extra information about the request
+
 
