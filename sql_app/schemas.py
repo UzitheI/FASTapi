@@ -22,7 +22,6 @@ class Item(ItemBase):
         orm_mode:True
         #sub class to item class, this config class has more details about the item class
         #here the orm mode is responsible for seamless communication between our model and schema, normally this can be explained by:
-
         '''
         we can input data into our database through our web applicaton, for this we input our data through our pydantic model ie schema and then when orm mode is set to true, it gets transformed into sqlalchmey model data effortlessly, also when orm mode is set to true, the pydantic model will not only get values from dictionaries ie data['id'], it will also take data from attributes like data.id
         '''
